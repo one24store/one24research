@@ -1,0 +1,943 @@
+openapi: 3.0.3
+info:
+  title: One24OS_Frontend
+  version: 1.0.0
+  description: One24OS_Frontend
+  contact:
+    name: One24OS_Frontend
+servers:
+  - url: 'http://localhost:5000'
+    description: Generated server url
+paths:
+  /api/users/{{:storeId}}/products/filter:
+    get:
+      tags:
+        - Product Filter
+      parameters:
+        - name: Product Keyword
+          in: path
+          description: Product Keyword
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Data Filtered"
+                  data:
+                    type: object
+                    properties:
+                      product name:
+                        type: string
+                        example: ACT II (Caramel bliss)
+                      store:
+                        type: string
+                        example: 6291bf4490e642d2d1577c0b
+                      variants_name: 
+                        type: string
+                        example: Caramel bliss
+                      image:
+                          type: string
+                          example: "https://m.media-amazon.com/images/I/41fHVe0ZsxL._SY450_.jpg"
+                      barcode:
+                          type: string
+                          example: 123456789
+                      category:
+                           type: string
+                           example: "Breakfast Food"
+                      Avalaible Quantity:
+                           type: integer
+                           example: 0
+                      Total Quantity:
+                           type: integer
+                           example: 0
+                      Max Retail Price:
+                           type: integer
+                           example: 75
+                      Price After Discount:
+                           type: integer
+                           example: 75
+                      Manufactured Date:
+                           type: integer
+                           example: 44640
+                      Expiry Date:
+                           type: integer
+                           example: 44642
+                      Auto Renew:
+                           type: boolean
+                           example: false
+                      Auto Renew Minimum Quantity:
+                           type: integer
+                           example: -1
+                      Auto Renew Maximum Quantity:
+                           type: integer
+                           example: -1
+                      Recommended Rate:
+                           type: integer
+                           example: null
+                      Recommended Button:
+                           type: boolean
+                           example: false
+                      Custom Button:
+                           type: boolean
+                           example: false
+                      Weight:
+                           type: integer
+                           example: 0.23
+                      notify:
+                           type: boolean
+                           example: false
+                      _id:
+                           type: string
+                           example: 6377d8a09c57025e7b129fbd
+                      createdAt:
+                           type: string
+                           example: 2022-11-18T19:10:24.667Z
+                      updatedAt:
+                            type: string
+                            example: 2022-11-18T19:10:24.667Z   
+  /otp-verification:
+    post:
+      tags:
+        - OTP Verification
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "hackrahul124@gmail.com"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "OTP sent"
+  /otp-verify:
+    post:
+      tags:
+        - OTP Verify
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "hackrahul124@gmail.com"
+                otp:
+                  type: string  
+                  example: 7785
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user: 
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 6377d8a09c57025e7b129fbd
+                      Owner_Name:
+                        type: string
+                        example: "Rahul Ranjan"
+                      owner_phone:
+                        type: string
+                        example: "1234567890"
+                      owner_email:
+                        type: string
+                        example: "hackrahul124@gmail.com"
+                      ownerDocumentFront:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                      ownerDocumentBack:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                      storeLegalName:
+                        type: string
+                        example: "One24-RahulStore"
+  
+  /api/users/products/available-variant:
+    get:
+      tags:
+       - Barcode Search
+      parameters:
+        - name: barcode
+          in: query
+          description: Barcode of the product to fetch
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                 success :
+                  type: boolean
+                  example: true
+                 message:
+                  type: string
+                  example: "Fetched Avalaible Data"
+                 data:
+                  type: object
+                  properties: 
+                    id: 
+                      type: integer
+                      example: 6377d8a09c57025e7b129fb9
+                    variants: 
+                      type: object
+                      properties:
+                        variants_name:
+                          type: string
+                          example: Ultra
+                        image: 
+                          type: string
+                          example: "https://m.media-amazon.com/images/I/41fHVe0ZsxL._SY450_.jpg"
+                        barcode:
+                          type: string
+                          example: 123456789
+                        category: 
+                          type: string
+                          example: "Breakfast Food"
+                        Avalaible Quantity:
+                          type: integer
+                          example: 0
+                        Total Quantity:
+                          type: integer
+                          example: 0
+                        Max Retail Price:
+                          type: integer
+                          example: 75
+                        Price After Discount:
+                          type: integer
+                          example: 75
+                        Manufactured Date:
+                          type: integer
+                          example: 44640
+                        Expiry Date:  
+                          type: integer
+                          example: 44642
+                        Auto Renew:
+                          type: boolean
+                          example: false
+                        Auto Renew Minimum Quantity:
+                          type: integer
+                          example: -1
+                        Auto Renew Maximum Quantity:
+                          type: integer
+                          example: -1
+                        Recommended Rate:
+                          type: integer
+                          example: null
+                        Recommended Button:
+                          type: boolean
+                          example: false
+                        Custom Button:
+                          type: boolean
+                          example: false
+                        Weight:
+                          type: integer
+                          example: 0.23
+                        notify:
+                          type: boolean
+                          example: false
+                        _id:
+                          type: string
+                          example: 6377d8a09c57025e7b129fbd
+                        createdAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+                        updatedAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+  /api/users/products/filter-variants: 
+    get:
+      tags:
+        - Search and Filter Variants
+      parameters:
+        - name: Category
+          in: path
+          description: Category
+          required: true
+          schema:
+            type: string
+        - name: Barcode
+          in: path
+          description: Barcode
+          required: true
+          schema:
+            type: string
+        - name: Name Keyword
+          in: path
+          description: Name Keyword
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                 success :
+                  type: boolean
+                  example: true
+                 message:
+                  type: string
+                  example: "Data Filtered"
+                 data:
+                  type: object
+                  properties: 
+                    id: 
+                      type: integer
+                      example: 6377d8a09c57025e7b129fb9
+                    product name:
+                      type: string
+                      example: "ALL OUT"
+                    variants: 
+                      type: object
+                      properties:
+                        variants_name:
+                          type: string
+                          example: Ultra
+                        image: 
+                          type: string
+                          example: "https://m.media-amazon.com/images/I/41fHVe0ZsxL._SY450_.jpg"
+                        barcode:
+                          type: string
+                          example: 123456789
+                        category: 
+                          type: string
+                          example: "Breakfast Food"
+                        Avalaible Quantity:
+                          type: integer
+                          example: 0
+                        Total Quantity:
+                          type: integer
+                          example: 0
+                        Max Retail Price:
+                          type: integer
+                          example: 75
+                        Price After Discount:
+                          type: integer
+                          example: 75
+                        Manufactured Date:
+                          type: integer
+                          example: 44640
+                        Expiry Date:  
+                          type: integer
+                          example: 44642
+                        Auto Renew:
+                          type: boolean
+                          example: false
+                        Auto Renew Minimum Quantity:
+                          type: integer
+                          example: -1
+                        Auto Renew Maximum Quantity:
+                          type: integer
+                          example: -1
+                        Recommended Rate:
+                          type: integer
+                          example: null
+                        Recommended Button:
+                          type: boolean
+                          example: false
+                        Custom Button:
+                          type: boolean
+                          example: false
+                        Weight:
+                          type: integer
+                          example: 0.23
+                        notify:
+                          type: boolean
+                          example: false
+                        _id:
+                          type: string
+                          example: 6377d8a09c57025e7b129fbd
+                        createdAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+                        updatedAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+  /api/users/products/{{:id}}/search/variant:
+    get:
+      tags:
+        - Search and Filter Variants in Store
+      parameters:
+        - name: Category
+          in: path
+          description: Category
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                 success :
+                  type: boolean
+                  example: true
+                 message:
+                  type: string
+                  example: "Data Filtered"
+                 data:
+                  type: object
+                  properties: 
+                    id: 
+                      type: integer
+                      example: 6377d8a09c57025e7b129fb9
+                    product name:
+                      type: string
+                      example: "ALL OUT"
+                    variants: 
+                      type: object
+                      properties:
+                        variants_name:
+                          type: string
+                          example: Ultra
+                        image: 
+                          type: string
+                          example: "https://m.media-amazon.com/images/I/41fHVe0ZsxL._SY450_.jpg"
+                        barcode:
+                          type: string
+                          example: 123456789
+                        category: 
+                          type: string
+                          example: "Breakfast Food"
+                        Avalaible Quantity:
+                          type: integer
+                          example: 0
+                        Total Quantity:
+                          type: integer
+                          example: 0
+                        Max Retail Price:
+                          type: integer
+                          example: 75
+                        Price After Discount:
+                          type: integer
+                          example: 75
+                        Manufactured Date:
+                          type: integer
+                          example: 44640
+                        Expiry Date:  
+                          type: integer
+                          example: 44642
+                        Auto Renew:
+                          type: boolean
+                          example: false
+                        Auto Renew Minimum Quantity:
+                          type: integer
+                          example: -1
+                        Auto Renew Maximum Quantity:
+                          type: integer
+                          example: -1
+                        Recommended Rate:
+                          type: integer
+                          example: null
+                        Recommended Button:
+                          type: boolean
+                          example: false
+                        Custom Button:
+                          type: boolean
+                          example: false
+                        Weight:
+                          type: integer
+                          example: 0.23
+                        notify:
+                          type: boolean
+                          example: false
+                        _id:
+                          type: string
+                          example: 6377d8a09c57025e7b129fbd
+                        createdAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+                        updatedAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+  /api/users/{{:userId}}/products:
+    get:
+      tags:
+        - Get All Product Sec 
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                 success :
+                  type: boolean 
+                  example: true
+                 message:
+                  type: string
+                  example: "Fetched Avalaible Data"
+                 data:
+                  type: object
+                  properties: 
+                    id: 
+                      type: integer
+                      example: 6377d8a09c57025e7b129fb9
+                    variants: 
+                      type: object
+                      properties:
+                        variants_name:
+                          type: string
+                          example: Ultra
+                        image: 
+                          type: string
+                          example: "https://m.media-amazon.com/images/I/41fHVe0ZsxL._SY450_.jpg"
+                        barcode:
+                          type: string
+                          example: 123456789
+                        category: 
+                          type: string
+                          example: "Breakfast Food"
+                        Avalaible Quantity:
+                          type: integer
+                          example: 0
+                        Total Quantity:
+                          type: integer
+                          example: 0
+                        Max Retail Price:
+                          type: integer
+                          example: 75
+                        Price After Discount:
+                          type: integer
+                          example: 75
+                        Manufactured Date:
+                          type: integer
+                          example: 44640
+                        Expiry Date:  
+                          type: integer
+                          example: 44642
+                        Auto Renew:
+                          type: boolean
+                          example: false
+                        Auto Renew Minimum Quantity:
+                          type: integer
+                          example: -1
+                        Auto Renew Maximum Quantity:
+                          type: integer
+                          example: -1
+                        Recommended Rate:
+                          type: integer
+                          example: null
+                        Recommended Button:
+                          type: boolean
+                          example: false
+                        Custom Button:
+                          type: boolean
+                          example: false
+                        Weight:
+                          type: integer
+                          example: 0.23
+                        notify:
+                          type: boolean
+                          example: false
+                        _id:
+                          type: string
+                          example: 6377d8a09c57025e7b129fbd
+                        createdAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+                        updatedAt:
+                          type: string
+                          example: 2022-11-18T19:10:24.667Z
+  /api/users/products/{{:stockId}}:
+    get:
+      tags:
+        - Get Product By Stock Id
+      parameters:
+        - name: stockId
+          in: path
+          description: stockId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                 id: 
+                  type: integer
+                  example: 6377d8a09c57025e7b129fb9
+                 store:
+                  type: integer
+                  example: 62dcadbed3bd880c871903d2
+                 product_name:
+                  type: string
+                  example: "AAHAAR"
+                 product_status:
+                  type: string
+                  example: "Active" 
+                 variants: 
+                  type: object
+                  properties:
+                    variants_name:
+                      type: string
+                      example: Ultra
+                    image: 
+                      type: string
+                      example: "https://m.media-amazon.com/images/I/41fHVe0ZsxL._SY450_.jpg"
+                    barcode:
+                      type: string
+                      example: 123456789
+                    category: 
+                      type: string
+                      example: "Breakfast Food"
+                    Avalaible Quantity:
+                      type: integer
+                      example: 0
+                    Total Quantity:
+                      type: integer
+                      example: 0
+                    Max Retail Price:
+                      type: integer
+                      example: 75
+                    Price After Discount:
+                      type: integer
+                      example: 75
+                    Manufactured Date:
+                      type: integer
+                      example: 44640
+                    Expiry Date:  
+                      type: integer
+                      example: 44642
+                    Auto Renew:
+                      type: boolean
+                      example: false
+                    Auto Renew Minimum Quantity:
+                      type: integer
+                      example: -1
+                    Auto Renew Maximum Quantity:
+                      type: integer
+                      example: -1
+                    Recommended Rate:
+                      type: integer
+                      example: null
+                    Recommended Button:
+                      type: boolean
+                      example: false
+                    Custom Button:
+                      type: boolean
+                      example: false
+                    Weight:
+                      type: integer
+                      example: 0.23
+                    notify:
+                      type: boolean
+                      example: false
+                    _id:
+                      type: string
+                      example: 6377d8a09c57025e7b129fbd
+                    createdAt:
+                          type: string
+  /api/users/products/:stockId/variants:
+    get:
+      tags:
+        - Get Product Variants By Stock Id
+      parameters:
+        - name: stockId
+          in: path
+          description: stockId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  variants_name:
+                    type: string
+                    example: Tejpatta
+                  image: 
+                    type: string
+                    example: []
+                  barcode:
+                    type: string
+                    example: 123456789
+                  category: 
+                    type: string
+                    example: "Breakfast Food"
+                  Avalaible Quantity:
+                    type: integer
+                    example: 0
+                  Total Quantity:
+                    type: integer
+                    example: 0
+                  Max Retail Price:
+                    type: integer
+                    example: 75
+                  Price After Discount:
+                    type: integer
+                    example: 75
+                  Manufactured Date:
+                    type: integer
+                    example: 44640
+                  Expiry Date:  
+                    type: integer
+                    example: 44642
+                  Auto Renew:
+                    type: boolean
+                    example: false
+                  Auto Renew Minimum Quantity:
+                    type: integer
+                    example: -1
+                  Auto Renew Maximum Quantity:
+                    type: integer
+                    example: -1
+                  Recommended Rate:
+                    type: integer
+                    example: null
+                  Recommended Button:
+                    type: boolean
+                    example: false
+                  Custom Button:
+                    type: boolean
+                    example: false
+                  Weight:
+                    type: integer
+                    example: 0.23
+                  notify:
+                    type: boolean
+                    example: false
+                  _id:
+                    type: string
+                    example: 6377d8a09c57025e7b129fbd
+                  createdAt:
+                    type: string
+                    example: 2022-11-18T19:10:24.667Z
+                  updatedAt:
+                    type: string
+                    example: 2022-11-18T19:10:24.667Z
+  /api/users/products/variants/:variantId:
+    get:
+      tags: 
+        - Get Product Variants By Variant Id
+      parameters:
+        - name: variantId
+          in: path
+          description: variantId
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                 success:
+                  type: boolean
+                  example: true
+                 messgage:
+                  type: string
+                  example: "Items Fetched" 
+                 data:
+                  type: object
+                  properties:
+                    variants_name:
+                      type: string
+                      example: Tejpatta
+                    image: 
+                      type: string
+                      example: []
+                    barcode:
+                      type: string
+                      example: 123456789
+                    category: 
+                      type: string
+                      example: "Rice and Atta"
+                    Avalaible Quantity:
+                      type: integer
+                      example: 0
+                    Total Quantity:
+                      type: integer
+                      example: 0
+                    Max Retail Price:
+                      type: integer
+                      example: 75
+                    Price After Discount:
+                      type: integer
+                      example: 75
+                    Manufactured Date:
+                      type: integer
+                      example: 44640
+                    Expiry Date:  
+                      type: integer
+                      example: 44642
+                    Auto Renew:
+                      type: boolean
+                      example: false
+                    Auto Renew Minimum Quantity:
+                      type: integer
+                      example: -1
+                    Auto Renew Maximum Quantity:
+                      type: integer
+                      example: -1
+                    Recommended Rate:
+                      type: integer
+                      example: null
+                    Recommended Button:
+                      type: boolean
+                      example: false
+                    Custom Button:
+                      type: boolean
+                      example: false
+                    Weight:
+                      type: integer
+                      example: 0.23
+                    notify:
+                      type: boolean
+                      example: false
+                    _id:
+                      type: string
+                      example: 6377d8a09c57025e7b129fbd
+                    createdAt:
+                      type: string
+                      example: 2022-11-18T19:10:24.667Z
+                    updatedAt:
+                      type: string
+                      example: 2022-11-18T19:10:24.667Z
+  /api/users/:storeId/products:
+    get:
+      tags:
+        - Get Products By Store Id
+      parameters:
+        - name: storeId
+          in: path
+          description: storeId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 6377d9169c57025e7b12a829
+                  store:
+                    type: integer
+                    example: "6291bf4490e642d2d1577c0b"
+                  product name:
+                    type: string
+                    example: ACT II
+                  product_status:
+                    type: string
+                    example: "Active"
+                  Variants:
+                    type: object
+                    properties:
+                      variants_name: 
+                        type: string
+                        example: Caramel bliss
+                      image:
+                          type: string
+                          example: "https://www.bigbasket.com/media/uploads/p/l/266570-2_8-kissan-chilli-tomato-sauce.jpg"
+                      barcode:
+                          type: string
+                          example: 123456789
+                      category:
+                           type: string
+                           example: "Hygiene and Personal Care"
+                      Avalaible Quantity:
+                           type: integer
+                           example: 0
+                      Total Quantity:
+                           type: integer
+                           example: 0
+                      Max Retail Price:
+                           type: integer
+                           example: 75
+                      Price After Discount:
+                           type: integer
+                           example: 75
+                      Manufactured Date:
+                           type: integer
+                           example: 44640
+                      Expiry Date:
+                           type: integer
+                           example: 44642
+                      Auto Renew:
+                           type: boolean
+                           example: false
+                      Auto Renew Minimum Quantity:
+                           type: integer
+                           example: -1
+                      Auto Renew Maximum Quantity:
+                           type: integer
+                           example: -1
+                      Recommended Rate:
+                           type: integer
+                           example: null
+                      Recommended Button:
+                           type: boolean
+                           example: false
+                      Custom Button:
+                           type: boolean
+                           example: false
+                      Weight:
+                           type: integer
+                           example: 0.23
+                      notify:
+                           type: boolean
+                           example: false
+                      _id:
+                           type: string
+                           example: 6377d8a09c57025e7b129fbd
+                      createdAt:
+                           type: string
+                           example: 2022-11-18T19:10:24.667Z
+                      updatedAt:
+                            type: string
+                            example: 2022-11-18T19:10:24.667Z
