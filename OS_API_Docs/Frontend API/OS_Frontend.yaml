@@ -941,3 +941,987 @@ paths:
                       updatedAt:
                             type: string
                             example: 2022-11-18T19:10:24.667Z
+
+  /api/users/{{:userId}}/products/excel-format:
+    post:
+      tags:
+        - Upload Products from Excel Format
+      parameters:
+        - name: userId
+          in: path
+          description: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /api/users/:userId/mySupplies:
+    get:
+      tags:
+        - Get My Supplies
+      parameters:
+        - name: userId
+          in: path
+          description: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+  /Users/notificationLeftSwipe/:id:
+    get:
+      tags:
+        - Get Notification Left Swipe
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  acknowledge:
+                    type: boolean
+                    example: true
+                  modifiedCount:
+                    type: integer
+                    example: 1
+                  upsertedId:
+                    type: string
+                    example: null
+                  upsertedCount:
+                    type: integer
+                    example: 0
+                  matchedCount:
+                    type: integer
+                    example: 1
+  /Users/NewOrderReact/:id:
+    post:
+      tags:
+        - Post New Order 
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productThumbnail:
+                  type: string
+                  example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                productName:
+                  type: string
+                  example: Dairy Milk Silk
+                store:
+                  type: string
+                  example: "62dcadbed3bd880c871903d2"
+                variantName:
+                  type: string
+                  example: "Silk Fruit"
+                barcode:
+                  type: string
+                  example: "7788994455"
+                ouincode:
+                  type: string
+                  example: "7788994455"
+                Price:  
+                  type: integer
+                  example: 499.06
+                variantQuantity:
+                  type: integer
+                  example: 10
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "New Order Created"
+                  data: 
+                    type: object
+                    properties:
+                      store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      productThumbnail:
+                        type: string
+                        example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                      productName:
+                        type: string
+                        example: Dairy Milk Silk
+                      variantName:
+                        type: string
+                        example: "Silk Fruit"
+                      barcode:
+                        type: string
+                        example: "7788994455"
+                      ouincode:
+                        type: string
+                        example: "7788994455"
+                      Price:  
+                        type: integer
+                        example: 499.06
+                      variantQuantity:
+                        type: integer
+                        example: 10 
+                      _id:
+                        type: string
+                        example: "6377d8a09c57025e7b129fbd"
+                      createdAt:
+                        type: string
+                        example: "2022-11-18T19:10:24.667Z"
+                      updatedAt:
+                        type: string
+                        example: "2022-11-18T19:10:24.667Z"
+  /Users/fandv/:id/new/order:
+    post:
+      tags:
+        - Post New Order F and V
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productThumbnail:
+                  type: string
+                  example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                productName:
+                  type: string
+                  example: Dairy Milk Silk
+                store:
+                  type: string
+                  example: "62dcadbed3bd880c871903d2"
+                variantName:
+                  type: string
+                  example: "Silk Fruit"
+                barcode:
+                  type: string
+                  example: "7788994455"
+                ouincode:
+                  type: string
+                  example: "7788994455"
+                Price:  
+                  type: integer
+                  example: 499.06
+                variantQuantity:
+                  type: integer
+                  example: 10
+                Weight:
+                  type: string
+                  example: "55g"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "New Order Created"
+                  data: 
+                    type: object
+                    properties:
+                      store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      productThumbnail:
+                        type: string
+                        example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                      productName:
+                        type: string
+                        example: Dairy Milk Silk
+                      variantName:
+                        type: string
+                        example: "Silk Fruit"
+                      barcode:
+                        type: string
+                        example: "7788994455"
+                      ouincode:
+                        type: string
+                        example: "7788994455"
+                      Price:  
+                        type: integer
+                        example: 499.06
+                      variantQuantity:
+                        type: integer
+                        example: 10 
+                      _id:
+                        type: string
+                        example: "638f52aabf6a7a24b62a2c85"
+                      createdAt:
+                        type: string
+                        example: "2022-11-19T18:12:26.000Z"
+                      updatedAt:
+                        type: string
+                        example: "2022-11-19T18:12:26.000Z"
+  /Users/NewOrderProductFetchReact/6291bf4490e642d2d1577c0b:
+    get:
+      tags:
+        - Get New Order Product
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "New Order Product"
+                  data: 
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        store:
+                          type: string
+                          example: "6291bf4490e642d2d1577c0b"
+                        productThumbnail:
+                          type: string
+                          example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                        productName:
+                          type: string
+                          example: Dairy Milk Silk
+                        variantName:
+                          type: string
+                          example: "Silk Fruit"
+                        barcode:
+                          type: string
+                          example: "7788994455"
+                        ouincode:
+                          type: string
+                          example: "7788994455"
+                        Price:  
+                          type: integer
+                          example: 499.06
+                        variantQuantity:
+                          type: integer
+                          example: 10 
+                        _id:
+                          type: string
+                          example: "6377d8a09c57025e7b129fbd"
+                        createdAt:
+                          type: string
+                          example: "2022-11-18T19:10:24.667Z"
+                        updatedAt:
+                          type: string
+                          example: "2022-11-18T19:10:24.667Z"
+  /api/users/products/638f3fd5bf6a7a24b62a2c68/addStock/neworder:
+    put:
+      tags:
+        - Add Stock New Order
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                variantQuantity:
+                  type: integer
+                  example: 15
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Stock Added"
+                  data: 
+                    type: object
+                    properties:
+                      store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      productThumbnail:
+                        type: string
+                        example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                      productName:
+                        type: string
+                        example: Dairy Milk Silk
+                      variantName:
+                        type: string
+                        example: "Silk Fruit"
+                      barcode:
+                        type: string
+                        example: "7788994455"
+                      ouincode:
+                        type: string
+                        example: "7788994455"
+                      Price:  
+                        type: integer
+                        example: 499.06
+                      variantQuantity:
+                        type: integer
+                        example: 15 
+                      _id:
+                        type: string
+                        example: "638f3fd5bf6a7a24b62a2c68"
+                      createdAt:
+                        type: string
+                        example: "2022-11-19T18:03:33.000Z"
+                      updatedAt:
+                        type: string
+                        example: "2022-11-19T18:03:33.000Z"
+  /api/users/products/638f3fd5bf6a7a24b62a2c68/discardStock/neworder:
+    put:
+      tags:
+        - Discard Stock New Order
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                variantQuantity:
+                  type: integer
+                  example: 1
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Stock Discarded"
+                  data: 
+                    type: object
+                    properties:
+                      store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      productThumbnail:
+                        type: string
+                        example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                      productName:
+                        type: string
+                        example: Dairy Milk Silk
+                      variantName:
+                        type: string
+                        example: "Silk Fruit"
+                      barcode:
+                        type: string
+                        example: "7788994455"
+                      ouincode:
+                        type: string
+                        example: "7788994455"
+                      Price:  
+                        type: integer
+                        example: 499.06
+                      variantQuantity:
+                        type: integer
+                        example: 14
+                      _id:
+                        type: string
+                        example: "638f3fd5bf6a7a24b62a2c68"
+                      createdAt:
+                        type: string
+                        example: "2022-11-19T18:03:33.000Z"
+                      updatedAt:
+                        type: string
+                        example: "2022-11-19T18:03:33.000Z"
+  /Users/checkoutList/6291bf4490e642d2d1577c0b:
+    post:
+      tags:
+        - Product  Checkout List
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+  /Users/displayCheckoutList/6291bf4490e642d2d1577c0b:
+    get:
+      tags:
+        - Display Checkout List
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Fetched customer details"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "62adee844e98f439e6cb2117"
+                      store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      firstname:
+                        type: string
+                        example: "Rahul"
+                      lastname:
+                        type: string
+                        example: "Ranjan"
+                      email:
+                        type: string
+                        example: "amitkumaroffic@gmail.com"
+                      phone:
+                        type: string
+                        example: "7788994455"
+                      address:
+                        type: string
+                        example: "B-1/1, Sector-63, Noida"
+                      notify:
+                        type: boolean
+                        example: false
+                      createdAt:
+                        type: string
+                        example: "2022-11-18T19:10:24.667Z"
+                      updatedAt:
+                        type: string
+                        example: "2022-11-18T19:10:24.667Z"
+                      __v:
+                        type: integer
+                        example: 0
+                      membershipnumber:
+                        type: string
+                        example: "1234"
+                      note:
+                        type: string
+                        example: "N/A"
+                      state:
+                        type: string
+                        example: "N/A"
+                      tags:
+                        type: string
+                        example: "N/A"
+                      tax:
+                        type: string
+                        example: "N/A"
+                      coupon:
+                        type: object
+                        properties: 
+                          validity:
+                            type: object
+                            properties:
+                              to:
+                                type: string
+                                example: "Sat Sep 03 2022"
+                              from:
+                                type: string
+                                example: "Fri Aug 19 2022"
+                          code:
+                            type: string
+                            example: "199041999"
+                          status:
+                            type: boolean
+                            example: true
+                          counter:
+                            type: integer
+                            example: 0
+                          _id:
+                            type: string
+                            example: "62f955f85847cf3db6c998a3"
+  /api/users/checkout-list/6349a950607251e94202addb:
+    get:
+      tags:
+        - Checkout List Item
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Fetched checkout list"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "62adee844e98f439e6cb2117"
+                      store:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                            example: "6291bf4490e642d2d1577c0b"
+                          owner_phone:  
+                            type: string
+                            example: "7788994455"
+                          storename:
+                            type: string
+                            example: "one24-rahul-teststore"
+                          city:
+                            type: string
+                            example: "Gurgaon"
+                          address:  
+                            type: string
+                            example: "Plot no-9, south city-II, opposite park hospital"
+                          pincode:
+                            type: string
+                            example: "122018"
+                          state:
+                            type: string
+                            example: "Haryana"
+                      customerMembershipNumber:
+                        type: string
+                        example: ""
+                      orderID:
+                        type: string
+                        example: "a53345"
+                      orderInfo:
+                        type: string
+                        example: "Walk In"
+                      variantDetails:
+                        type: object
+                        properties:
+                          store:
+                            type: string
+                            example: "6291bf4490e642d2d1577c0b"
+                          productThumbnail:
+                            type: string
+                            example: "https://www.bigbasket.com/media/uploads/p/l/1214951_1-cadbury-dairy-milk-silk-fruit-nut-chocolate-bar.jpg"
+                          productName:
+                            type: string
+                            example: "Dairy Milk Silk"
+                          variantName:
+                            type: string
+                            example: "Silk Fruit"
+                          barcode:
+                            type: string
+                            example: "7788994455"
+                          ouincode:
+                            type: string
+                            example: "7788994455"
+                          Price:  
+                            type: integer
+                            example: 499.06
+                          variantQuantity:
+                            type: integer
+                            example: 1
+                          _id:
+                            type: string
+                            example: "638f3fd5bf6a7a24b62a2c68"
+                          createdAt:
+                            type: string
+                            example: "2022-11-19T18:03:33.000Z"
+                          updatedAt:
+                            type: string
+                            example: "2022-11-19T18:03:33.000Z"
+  /Users/newOrderList/deleteQueueList/:newOrderId:
+    delete:
+      tags:
+        - Delete Queue List
+      parameters:
+        - in: path
+          name: newOrderId
+          schema:
+            type: string
+          required: true
+          description: The newOrderId of the newOrderList to delete
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Deleted queue list"
+                  data:
+                    type: string
+                    example: null
+  /Users/newOrderList/clearAll/:id:
+    delete:
+      tags:
+        - Clear All Queue List
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newOrderList to delete
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Deleted queue list"
+                  data:
+                    type: string
+                    example: []
+  /api/users/products/variants/:variantId/pricing:
+    put:
+      tags:
+        - Pricing
+      parameters:
+        - in: path
+          name: variantId
+          schema:
+            type: string
+          required: true
+          description: The variantId of the variant to get pricing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                total_quantity:
+                  type: string
+                  example: "20"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "Pricing Updated"
+  /api/users/products/variants/:variantId/custom-pricing:
+    put:
+      tags:
+        - Custom Pricing
+      parameters:
+        - in: path
+          name: variantId
+          schema:
+            type: string
+          required: true
+          description: The variantId of the variant to get custom pricing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customPrice:
+                  type: string
+                  example: "78"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "Custom Pricing updated"
+  /api/users/products/variants/:variantId/recommend:
+    patch:
+      tags:
+        - Recommended Button
+      parameters:
+        - in: path
+          name: variantId
+          schema:
+            type: string
+          required: true
+          description: The variantId of the variant to get recommend
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                recomendedButton:
+                  type: string
+                  example: "ON"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "Marked as Recommended"
+  /api/users/orderNumber/:id:
+    get:
+      tags:
+        - Order Number
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the orderNumber to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: "6291bf4490e642d2d1577c0b"
+                  orderNumber:
+                    type: integer
+                    example: 0
+  /Users/checkoutList/:id:
+    get:
+      tags:
+        - Product Checkout List
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the checkoutList to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Checkout List"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      customerMembershipNumber:
+                        type: string
+                        example: ""
+                      orderID:
+                        type: string
+                        example: "1eb53"
+                      orderInfo:  
+                        type: string
+                        example: "Walk-in"
+                      variantDetails:
+                        type: array
+                        properties:
+                          store:  
+                            type: string
+                            example: "6291bf4490e642d2d1577c0b"
+                          productThumbnail:
+                            type: string
+                            example: "https://cdn.shopify.com/s/files/1/0018/7562/3618/products/1_1024x1024.jpg?v=1627380000"
+                          productName:
+                            type: string
+                            example: "N/A"
+                          variantName:
+                            type: string
+                            example: "N/A"
+                          barcode:
+                            type: string
+                            example: "Kurkure"
+                          ouincode:
+                            type: string
+                            example: " "
+                          Price:  
+                            type: string
+                            example: "10"
+                          variantQuantity:
+                            type: string
+                            example: "1"
+                          _id:  
+                            type: string
+                            example: "6291bf4490e642d2d1577c0b"
+                          updatedAt:
+                            type: string
+                            example: "2021-07-30T09:33:20.000Z"
+                          createdAt:
+                            type: string
+                            example: "2021-07-30T09:33:20.000Z"
+  
+  /Users/newSuppliesSingleOrder/:id:
+    get:
+      tags:
+        - New Supplies Single Order
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newSuppliesSingleOrder to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user: 
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 6377d8a09c57025e7b129fbd
+                      Owner_Name:
+                        type: string
+                        example: "Rahul Ranjan"
+                      owner_phone:
+                        type: string
+                        example: "1234567890"
+                      owner_email:
+                        type: string
+                        example: "hackrahul124@gmail.com"
+                      ownerDocumentFront:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                      ownerDocumentBack:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                      storeLegalName:
+                        type: string
+                        example: "One24-RahulStore"
+  /api/users/newSuppliesSingleOrder/done/payment/:id:
+    get:
+      tags:
+        - New Supplies Single Order Payment
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newSuppliesSingleOrder to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                
