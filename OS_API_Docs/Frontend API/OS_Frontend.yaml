@@ -1923,5 +1923,505 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                
+                type: string  
+                example: []
+  /api/users/newSuppliesSingleOrder/:id:
+    get:
+      tags:
+        - Display Single Order
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newSuppliesSingleOrder to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Not found any product"
+  /api/users/newSuppliesSingleOrderPayment/:id:
+    get:
+      tags:
+        - Display Single Order Payment
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newSuppliesSingleOrderPayment to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Not found any product"
+  /Users/newSupliesCart/:id:
+    post:
+      tags:
+        - New Supplies Cart
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newSupliesCart to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orderVariant:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: "Potato Chilli"
+                      barcode:
+                        type: string
+                        example: "3424234"
+                      category:
+                        type: string
+                        example: "staples"
+                      sub_category:
+                        type: string
+                        example: "Packet Food"
+                      Description:  
+                        type: string
+                        example: "Pepsico Product"
+                      MerchantSku:
+                        type: string
+                        example: "SKU123456"
+                      marketedBy:
+                        type: string
+                        example: "Pepsico"
+                      manufacturedby:
+                        type: string
+                        example: "2022-04-01"
+                      manufactureDate:
+                        type: string
+                        example: "2022-04-01"
+                      expiryDate:
+                        type: string
+                        example: "2022-04-30"
+                      item_price:
+                        type: string
+                        example: "10"
+                      price_after_discount:
+                        type: string
+                        example: "0"
+                      Weight: 
+                        type: string
+                        example: "2" 
+                      _id:  
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      createdAt:  
+                        type: string
+                        example: "2021-07-30T09:33:20.000Z"
+                      updatedAt:
+                        type: string
+                        example: "2021-07-30T09:33:20.000Z"
+                      image:  
+                        type: string
+                        example: "https://cdn.shopify.com/s/files/1/0018/7562/3618/products/1_1024x1024.jpg?v=1627380000"
+                      quantity: 
+                        type: string
+                        example: "10000"
+                      cost:
+                        type: string
+                        example: "8"
+  /api/users/newSupliesCart/:id:
+    get:
+      tags: 
+        - Display Order Cart React
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newSupliesCart to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orderVariant:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: "Potato Chilli"
+                      barcode:
+                        type: string
+                        example: "3424234"
+                      category:
+                        type: string
+                        example: "staples"
+                      sub_category:
+                        type: string
+                        example: "Packet Food"
+                      Description:  
+                        type: string
+                        example: "Pepsico Product"
+                      MerchantSku:
+                        type: string
+                        example: "SKU123456"
+                      marketedBy:
+                        type: string
+                        example: "Pepsico"
+                      manufacturedby:
+                        type: string
+                        example: "2022-04-01"
+                      manufactureDate:
+                        type: string
+                        example: "2022-04-01"
+                      expiryDate:
+                        type: string
+                        example: "2022-04-30"
+                      item_price:
+                        type: string
+                        example: "10"
+                      price_after_discount:
+                        type: string
+                        example: "0"
+                      Weight: 
+                        type: string
+                        example: "2" 
+                      _id:  
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      createdAt:  
+                        type: string
+                        example: "2021-07-30T09:33:20.000Z"
+                      updatedAt:
+                        type: string
+                        example: "2021-07-30T09:33:20.000Z"
+                      image:  
+                        type: string
+                        example: "https://cdn.shopify.com/s/files/1/0018/7562/3618/products/1_1024x1024.jpg?v=1627380000"
+                      quantity: 
+                        type: string
+                        example: "10000"
+                      cost:
+                        type: string
+                        example: "8"
+  /api/users/products/variants/:variantId/auto-renew:
+    post:
+      tags:
+        - Auto Renew
+      parameters:
+        - in: path
+          name: variantId
+          schema:
+            type: string
+          required: true
+          description: The id of the variant to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    example: {}
+  /api/users/quantitySuppliesChange/:id:
+    post:
+      tags:
+        - Quantity Supplies Change
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the quantitySuppliesChange to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user: 
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 6377d8a09c57025e7b129fbd
+                      Owner_Name:
+                        type: string
+                        example: "Rahul Ranjan"
+                      owner_phone:
+                        type: string
+                        example: "1234567890"
+                      owner_email:
+                        type: string
+                        example: "hackrahul124@gmail.com"
+                      ownerDocumentFront:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                      ownerDocumentBack:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                      storeLegalName:
+                        type: string
+                        example: "One24-RahulStore"
+  /api/users/paymentdetails/:id:
+    get:
+      tags:
+        - Payment Details
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the paymentdetails to get
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  paymentdetails:
+                    type: object
+                    properties:
+                      entity:
+                        type: string
+                        example: "event"
+                      account_id:
+                        type: string
+                        example: "acc_1J9Z1wJZ7Z7Z7Z7Z"
+                      event:
+                        type: string
+                        example: "payment.captured"
+                      contains:
+                        type: array
+                        items:
+                          type: string
+                          example: "payment"
+                      payload:
+                        type: object
+                        properties:
+                          payment:
+                            type: object
+                            properties:
+                              entity:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                    example: "pay_1J9Z1wJZ7Z7Z7Z7Z"
+                                  entity:
+                                    type: string
+                                    example: "payment"
+                                  amount:
+                                    type: number
+                                    example: 100
+                                  currency:
+                                    type: string
+                                    example: "INR"
+                                  status:
+                                    type: string
+                                    example: "captured"
+                                  order_id:
+                                    type: string
+                                    example: "order_1J9Z1wJZ7Z7Z7Z7Z"
+                                  invoice_id:
+                                    type: string
+                                    example: "inv_1J9Z1wJZ7Z7Z7Z7Z"
+                                  international:
+                                    type: boolean
+                                    example: false
+                                  method:
+                                    type: string
+                                    example: "card"
+                                  amount_refunded:
+                                    type: number
+                                    example: 0
+                                  refund_status:
+                                    type: string
+                                    example: null
+                                  captured:
+                                    type: boolean
+                                    example: true
+                                  description:
+                                    type: string
+                                    example: null
+                                  card_id:
+                                    type: string
+                                    example: "card_1J9Z1wJZ7Z7Z7Z7Z"
+                                  card: 
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: string
+                                        example: "card_1J9Z1wJZ7Z7Z7Z7Z"
+                                      entity:
+                                        type: string
+                                        example: "card"
+                                      name:
+                                        type: string
+                                        example: "Rahul Ranjan"
+                                      last4:
+                                        type: string
+                                        example: "1111"
+                                      network:
+                                        type: string
+                                        example: "VISA"
+                                      type:
+                                        type: string
+                                        example: "debit"
+                                      issuer:
+                                        type: string
+                                        example: "HDFC Bank"
+                                      international:
+                                        type: boolean
+                                        example: false
+                                      emi:
+                                        type: boolean
+                                        example: false
+                                      sub_type:
+                                        type: string
+                                        example: "Consumer"
+                                      token_iin:
+                                        type: string
+                                        example: null
+                                  bank:
+                                    type: string
+                                    example: null 
+                                  tax:  
+                                    type: number
+                                    example: 0
+                                  error_code:
+                                    type: string
+                                    example: null
+                                  error_description:
+                                    type: string
+                                    example: null
+                                  error_source:
+                                    type: string
+                                    example: null
+                                  error_step:
+                                    type: string
+                                    example: null
+                                  error_reason:
+                                    type: string
+                                    example: null
+                                  acquirer_data:
+                                    type: object
+                                    properties:
+                                     auth_code:
+                                        type: string
+                                        example: "123456"
+                                  createdAt:
+                                    type: number
+                                    example: 1613718850
+  /api/users/newOrderQuantityChange/:id:
+    post:
+      tags:
+        - "New Order Quantity change"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The id of the newOrderQuantityChange to get
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                autoRenew:
+                  type: string
+                  example: "ON"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Order not found"
+                  data: 
+                    type: string
+                    example: null
+  /api/users/createstore:
+    post:
+      tags:
+        - "Create Store"  
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ownerName:
+                  type: string
+                  example: "Subhradeep Samanta"
+                ownerPhone:
+                  type: string
+                  example: "1234567890"
+                ownerEmail:
+                  type: string
+                  example: "subhradeepsamanta2002@gmail.com"
+                ownerImage_Url:
+                  type: string
+                  example: "Testing_Image"
+                storeImage_Url:
+                  type: string
+                  example: "Testing_Image"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+                    example: "6395e4606b98b2456d7d4692"
+                  email:
+                    type: string
+                    example: "subhradeepsamanta2002@gmail.com"
+                  
