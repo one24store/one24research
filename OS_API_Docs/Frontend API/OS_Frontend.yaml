@@ -2424,4 +2424,551 @@ paths:
                   email:
                     type: string
                     example: "subhradeepsamanta2002@gmail.com"
-                  
+  /api/displaysuppliesSingleOrder/:
+    post:
+      tags:
+        - "Display Supplies Single Order"  
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orderQuantity:
+                    type: string
+                    example: "5"
+                  orderTotalPrice:
+                    type: string
+                    example: "89.6"
+                  OrderTradePrice:
+                    type: string
+                    example: "85.119999"
+                  OrderPersonName:
+                    type: string
+                    example: "Subhradeep Samanta"
+                  OrderPersonEmail:
+                    type: string
+                    example: "subhradeepsamanta2002@gmail.com"
+                  OrderPersonPhone:
+                    type: string
+                    example: "1234567890"
+                  orderMerchantSku:
+                    type: string
+                    example: "AKJ0P879"
+                  orderAddress:
+                    type: string
+                    example: "Testing Address"
+                  orderProductVariant:
+                    type: string
+                    example: "Kurkure"
+                  orderBarcode:
+                    type: string
+                    example: "Kurkure"
+                  orderDate:
+                    type: string
+                    example: "8th December"
+                  orderProductImage:
+                    type: string
+                    example: "Testing Image"
+                  cod: 
+                    type: string
+                    example: "true"
+                  billingAddress:
+                    type: string
+                    example: "Testing Address"
+                  billingCity:
+                    type: string
+                    example: "Testing City"
+                  billingState:
+                    type: string
+                    example: "Testing State"
+                  billingEmail:
+                    type: string
+                    example: "subhradeepsamanta2002@gmail.com"
+                  billingPhone:
+                    type: string
+                    example: "1234567890"
+                  billingName:
+                    type: string
+                    example: "Subhradeep Samanta"
+                  billingPincode:
+                    type: string
+                    example: "700001"
+                  order_id:
+                    type: string
+                    example: "MN0pcJ9EX"
+                  _id: 
+                    type: string
+                    example: "5ff1f9b0b0b0b0b0b0b0b0b0"
+                  createdAt:
+                    type: string
+                    example: "2021-01-04T10:11:36.000Z"
+                  updatedAt:
+                    type: string
+                    example: "2021-01-04T10:11:36.000Z"
+  /api/displaysupliesCartOrderPayment/:
+    get:
+      tags:
+        - "Display Supplies Cart Order Payment"  
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: []
+  /api/singleandcart/displaysupliesOrderPayment/:
+    get:
+      tags:
+        - "Display Supplies Single and Cart Order Payment"  
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orderQuantity:
+                    type: string
+                    example: "5"
+                  orderTotalPrice:
+                    type: string
+                    example: "89.6"
+                  OrderTradePrice:
+                    type: string
+                    example: "85.119999"
+                  OrderPersonName:
+                    type: string
+                    example: "Subhradeep Samanta"
+                  OrderPersonEmail:
+                    type: string
+                    example: "subhradeepsamanta2002@gmail.com"
+                  OrderPersonPhone:
+                    type: string
+                    example: "1234567890"
+                  orderMerchantSku:
+                    type: string
+                    example: "AKJ0P879"
+                  orderAddress:
+                    type: string
+                    example: "Testing Address"
+                  orderProductVariant:
+                    type: string
+                    example: "Kurkure"
+                  orderBarcode:
+                    type: string
+                    example: "Kurkure"
+                  orderDate:
+                    type: string
+                    example: "8th December"
+                  orderProductImage:
+                    type: string
+                    example: "Testing Image"
+                  cod: 
+                    type: string
+                    example: "true"
+                  billingAddress:
+                    type: string
+                    example: "Testing Address"
+                  billingCity:
+                    type: string
+                    example: "Testing City"
+                  billingState:
+                    type: string
+                    example: "Testing State"
+                  billingEmail:
+                    type: string
+                    example: "subhradeepsamanta2002@gmail.com"
+                  billingPhone:
+                    type: string
+                    example: "1234567890"
+                  billingName:
+                    type: string
+                    example: "Subhradeep Samanta"
+                  billingPincode:
+                    type: string
+                    example: "700001"
+                  order_id:
+                    type: string
+                    example: "MN0pcJ9EX"
+                  _id: 
+                    type: string
+                    example: "5ff1f9b0b0b0b0b0b0b0b0b0"
+                  createdAt:
+                    type: string
+                    example: "2021-01-04T10:11:36.000Z"
+                  updatedAt:
+                    type: string
+                    example: "2021-01-04T10:11:36.000Z"
+  /api/store/pre_registration:
+    post:
+      tags:
+        - "Store Pre Registration"  
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ownerImage:
+                  type: string
+                  example: "TestUrl"
+                ownerName:
+                  type: string
+                  example: "Test"
+                ownerEmail:
+                  type: string
+                  example: "test@123"
+                ownerPhone:
+                  type: string
+                  example: "1234567890"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Store Pre-Registered"
+  /api/pre_registered/storelist:
+    get:
+      tags:
+        - "Pre Registered Store List"  
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: "5ff1f9b0b0b0b0b0b0b0b0b0"
+                  ownerImage:
+                    type: string
+                    example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_pre_register/ownerImage_test%40123_1670935329934"
+                  ownerName:
+                    type: string
+                    example: "Test"
+                  ownerEmail:
+                    type: string
+                    example: "test@123"
+                  ownerPhone:
+                    type: string
+                    example: "1234567890"
+                  createdAt:
+                    type: string
+                    example: "2021-01-04T10:11:36.000Z"
+                  updatedAt:
+                    type: string
+                    example: "2021-01-04T10:11:36.000Z"
+  /api/users/status:
+    get:
+      tags:
+        - "User Status"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: "Active"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "Failed to Update the Status"
+  /api/Users/display_products/:id:
+    get:
+      tags:
+        - "Display Products"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: 6377d8a09c57025e7b129fbd
+                  Owner_Name:
+                    type: string
+                    example: "Rahul Ranjan"
+                  owner_phone:
+                    type: string
+                    example: "1234567890"
+                  owner_email:
+                    type: string
+                    example: "hackrahul124@gmail.com"
+                  ownerDocumentFront:
+                    type: string
+                    example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                  ownerDocumentBack:
+                    type: string
+                    example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                  storeLegalName:
+                    type: string
+                    example: "One24-RahulStore"
+  /api/Users/display_products_react/:id:
+    get:
+      tags:
+        - "Display Products React"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: 6377d8a09c57025e7b129fbd
+                  Owner_Name:
+                    type: string
+                    example: "Rahul Ranjan"
+                  owner_phone:
+                    type: string
+                    example: "1234567890"
+                  owner_email:
+                    type: string
+                    example: "hackrahul124@gmail.com"
+                  ownerDocumentFront:
+                    type: string
+                    example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                  ownerDocumentBack:
+                    type: string
+                    example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                  storeLegalName:
+                    type: string
+                    example: "One24-RahulStore"
+  /api/users/products/:productId:
+    get:
+      tags:
+        - "Products"
+      parameters:
+        - in: path
+          name: productId
+          schema:
+            type: string
+          required: true
+          description: The product id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  variants_name:
+                    type: string
+                    example: Tejpatta
+                  image: 
+                    type: string
+                    example: []
+                  barcode:
+                    type: string
+                    example: 123456789
+                  category: 
+                    type: string
+                    example: "Breakfast Food"
+                  Avalaible Quantity:
+                    type: integer
+                    example: 0
+                  Total Quantity:
+                    type: integer
+                    example: 0
+                  Max Retail Price:
+                    type: integer
+                    example: 75
+                  Price After Discount:
+                    type: integer
+                    example: 75
+                  Manufactured Date:
+                    type: integer
+                    example: 44640
+                  Expiry Date:  
+                    type: integer
+                    example: 44642
+                  Auto Renew:
+                    type: boolean
+                    example: false
+                  Auto Renew Minimum Quantity:
+                    type: integer
+                    example: -1
+                  Auto Renew Maximum Quantity:
+                    type: integer
+                    example: -1
+                  Recommended Rate:
+                    type: integer
+                    example: null
+                  Recommended Button:
+                    type: boolean
+                    example: false
+                  Custom Button:
+                    type: boolean
+                    example: false
+                  Weight:
+                    type: integer
+                    example: 0.23
+                  notify:
+                    type: boolean
+                    example: false
+                  _id:
+                    type: string
+                    example: 6377d8a09c57025e7b129fbd
+                  createdAt:
+                    type: string
+                    example: 2022-11-18T19:10:24.667Z
+                  updatedAt:
+                    type: string
+                    example: 2022-11-18T19:10:24.667Z
+  /login/forgotPassword:
+    post:
+      tags:
+        - "Forgot Password"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "hackrahul124@gmail.com"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "Email Sent"
+  /login/forgotPasswordOTP:
+    post:
+      tags:
+        - "Forgot Password OTP"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "hackrahul124@gmail.com"
+                otp:
+                  type: string
+                  example: "2680"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "OTP Verified"
+  /api/Users/product/newSupplies/:id:
+    post:
+      tags:
+        - "New Supplies"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+             schema:
+              type: object
+              properties:
+                _id:
+                  type: string
+                  example: "6377d8a09c57025e7b129fbd"
+                Owner_Name:
+                  type: string
+                  example: "Rahul Ranjan"
+                owner_phone:
+                  type: string
+                  example: "1234567890"
+                owner_email:
+                    type: string
+                    example: "hackrahul124@gmail.com"
+                ownerDocumentFront:
+                    type: string
+                    example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                ownerDocumentBack:
+                    type: string
+                    example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                storeLegalName:
+                    type: string
+                    example: "One24-RahulStore"
+        
+  /Users/product/:id/getSupplies:
+    get:
+      tags:
+        - "Get Supplies"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Request failed with status code 404"
+                  name:
+                    type: string
+                    example: "Error"
+
+                
