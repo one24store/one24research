@@ -2970,5 +2970,993 @@ paths:
                   name:
                     type: string
                     example: "Error"
-
-                
+  /api/Users/supliesCartOrderPayment/:id:
+    get:
+      tags:
+        - "Display Supplies Cart Order Payment"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: []
+  /api/Users/:userId/orders-cancellation-status:
+    get:
+      tags:
+        - "Orders Cancellation Status"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: []
+  /api/Users/:userId/not-yet-shipped:
+    get:
+      tags:
+        - "Order Not Yet Shipped"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: []
+  /api/users/customer/:id:
+    get:
+      tags:
+        - "Get Customer Details"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: []
+  /api/users/:userId/customers:
+    post:
+      tags:
+        - "Add Customer"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Store:
+                  type: string
+                  example: "Subhradeep Test Store"
+                firstName:
+                  type: string
+                  example: "Subhradeep"
+                lastName:
+                  type: string
+                  example: "Samanta"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Created New Customer"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "6377d8a09c57025e7b129fbd"
+                      Store:
+                        type: string
+                        example: "Subhradeep Test Store"
+                      firstName:
+                        type: string
+                        example: "Subhradeep"
+                      lastName:
+                        type: string
+                        example: "Samanta"
+                      notify:
+                        type: boolean
+                        example: false
+                      coupan:
+                        type: string
+                        example: []
+                      createdAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+                      updatedAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+  /api/users/:userId/excel-customer:
+    post:
+      tags:
+        - "Excel Customer React"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+  /api/users/customers/:customerId:
+    get:
+      tags:
+        - "Get Customer Details"
+      parameters:
+        - in: path
+          name: customerId
+          schema:
+            type: string
+          required: true
+          description: The customer id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Fetched Customer Details"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "6377d8a09c57025e7b129fbd"
+                      Store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      firstName:
+                        type: string
+                        example: "Rahul"
+                      lastName:
+                        type: string
+                        example: "Ranjan"
+                      email:
+                        type: string
+                        example: "amitkumaroffic@gmail.com"
+                      phone:
+                        type: string
+                        example: "7979064079"
+                      address:
+                        type: string
+                        example: "12,CHHOTA PANCHGARGH , JIRWABARI"
+                      notify:
+                        type: boolean
+                        example: false
+                      createdAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+                      updatedAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+                      membershipnumber:
+                        type: string
+                        example: "1234"
+                      note:
+                        type: string
+                        example: "N/A"
+                      state :
+                        type: string
+                        example: "44"
+                      tags :
+                        type: string
+                        example: "N/A"
+                      coupan: 
+                        type: object
+                        properties:
+                          code :
+                            type: string
+                            example: "199041999"
+                          validity:
+                            type: object
+                            properties:
+                              to:
+                                type: string
+                                example: "2021-11-18T19:10:24.667Z"
+                              from:
+                                type: string
+                                example: "2021-11-18T19:10:24.667Z"
+                          status:
+                            type: string
+                            example: "true"
+                          counter:
+                            type: string
+                            example: "8"
+                          id:
+                            type: string
+                            example: "6377d8a09c57025e7b129fbd"
+  /api/users/qualityform/:id:
+    get:
+      tags:
+        - "Quality Search"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The customer id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: 62daac4b0b9ab9faaf5076a1
+  /api/users/qualities/:qualityId:
+    get:
+      tags:
+        - "Nested Quality Record"
+      parameters:
+        - in: path
+          name: qualityId
+          schema:
+            type: string
+          required: true
+          description: The quality id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: 62daac4b0b9ab9faaf5076a1
+  /api/users/:userId/qualities:
+    get:
+      tags:
+        - "Display Quality Control Record"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Fetched Quality Control Record"
+                  data:
+                    type: object
+                    example: []
+  
+  /api/users/:userId/events:
+    get:
+      tags:
+        - "Nested Calender"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Fetched event details"
+                  data:
+                    type: string
+                    example: []
+  /api/users/:userId/events/next-seven-days:
+    get:
+      tags:
+        - "Next Seven Days Calender"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Failed to fetch event details"
+                  data:
+                    type: string
+                    example: "ISODate is not defined"
+  /api/users/trainings/:trainingId:
+    get:
+      tags:
+        - "Display Nested Training Record"
+      parameters:
+        - in: path
+          name: trainingId
+          schema:
+            type: string
+          required: true
+          description: The training id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Fetched Training Record"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "6377d8a09c57025e7b129fbd"
+                      Store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      header:
+                        type: string
+                        example: "Some Training Data"
+                      thumbnail:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/store_others/trainingThumbnail_Test_1658638815207"
+                      document :
+                        type: string
+                        example: "Test"
+                      thumbnailFile:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/store_others/trainingThumbnail_Test_1658638815207"
+                      notify:
+                        type: boolean
+                        example: false
+                      createdAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+                      updatedAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+  /api/users/stafflogin:
+    post:
+      tags:
+        - "Staff Login"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sEmail:
+                  type: string
+                  example: "anukulsingh125@gmail.com"
+                sPassword:
+                  type: string
+                  example: "Horse@345"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Login Successful"
+                  token:
+                    type: string
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2ZmNjM0NDc5MTBlMzgxZmFhNDFhZSIsImlhdCI6MTY3MTQyODYzNSwiZXhwIjoxNjcxNDgyNjM1fQ.p_sTeOJ-ru0j48pTUzJJcofge3TwQkBZVBl1UNV0mY4"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "6377d8a09c57025e7b129fbd"
+                      Store:
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      sFirstName:
+                        type: string
+                        example: "Anukul"
+                      sLastName:
+                        type: string
+                        example: "Singh" 
+                      sEmail:
+                        type: string
+                        example: "anukulsingh125@gmail.com"
+                      sPhone:
+                        type: string
+                        example: "9876543210"
+                      sState:
+                        type: string
+                        example: "254"
+                      sPayrollId:
+                        type: string
+                        example: "h324333"
+  /api/users/:storeId/staffs/react:
+    post:
+      tags:
+        - "Add Staff React"
+      parameters:
+        - in: path
+          name: storeId
+          schema:
+            type: string
+          required: true
+          description: The store id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                img :
+                  type: string
+                  example: "Test"
+                sFirstName:
+                  type: string
+                  example: "Subhradeep"
+                sLastName:
+                  type: string
+                  example: "Samanta"
+                sEmail:
+                  type: string
+                  example: "subhradeepsamanta2002@gmail.com" 
+                sPasscode :
+                  type: string
+                  example: "Subhradeep@123"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Failed to add Staff"
+                  data:
+                    type: object
+                    example: null 
+  /api/user/requestHelp/:id:
+    get:
+      tags:
+        - "Get Request Help Data"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: 22556
+  /api/users/:userId/help-support:
+    post:
+      tags:
+        - "Store Help"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                caseType:
+                  type: string
+                  example: "Test"
+                issue:
+                  type: string
+                  example: "Done"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Help request sent successfully"
+                  data:
+                    type: object
+                    properties:
+                      store: 
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      caseType:
+                        type: string
+                        example: "Test"
+                      issue:
+                        type: string
+                        example: "Done"
+  /api/users/help-support/:helpId:
+    get:
+      tags:
+        - "Nested Help"
+      parameters:
+        - in: path
+          name: helpId
+          schema:
+            type: string
+          required: true
+          description: The help id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Fetched Help Details"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "6377d8a09c57025e7b129fbd"
+                      store: 
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      caseType:
+                        type: string
+                        example: "Test"
+                      issue:
+                        type: string
+                        example: "Done"
+                      status :
+                        type: string
+                        example: "Pending"
+                      createdAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+                      updatedAt:
+                        type: string
+                        example: "2021-11-18T19:10:24.667Z"
+  /totalstores:
+    get:
+      tags:
+        - "Total Stores"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: number
+                    example: 1
+  /storechartdata:
+    get:
+      tags:
+        - "Store Chart Data"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+  /storedata: 
+    get:
+      tags:
+        - "Store Data"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: null
+  /ownerdata:
+    post: 
+      tags:
+        - "Owner Data"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                number:
+                  type: string
+                  example: "9988776655"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example: Not found
+  /frontend/status/:id:
+    get:
+      tags:
+        - "Frontend Status"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: boolean
+                example: true
+  /product/search/:id/name:
+    get:
+      tags:
+        - "Search Product Name"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Get the Product Name"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "6377d8a09c57025e7b129fbd"
+                      store: 
+                        type: string
+                        example: "6291bf4490e642d2d1577c0b"
+                      product_Name:
+                        type: string
+                        example: "AAHAAR"
+                      product_status:
+                        type: string
+                        example: "ACTIVE"
+                      variants :
+                        type: object
+                        properties:
+                          variants_name:
+                            type: string
+                            example: Tejpatta
+                          image: 
+                            type: string
+                            example: []
+                          barcode:
+                            type: string
+                            example: 123456789
+                          category: 
+                            type: string
+                            example: "Breakfast Food"
+                          Avalaible Quantity:
+                            type: integer
+                            example: 0
+                          Total Quantity:
+                            type: integer
+                            example: 0
+                          Max Retail Price:
+                            type: integer
+                            example: 75
+                          Price After Discount:
+                            type: integer
+                            example: 75
+                          Manufactured Date:
+                            type: integer
+                            example: 44640
+                          Expiry Date:  
+                            type: integer
+                            example: 44642
+                          Auto Renew:
+                            type: boolean
+                            example: false
+                          Auto Renew Minimum Quantity:
+                            type: integer
+                            example: -1
+                          Auto Renew Maximum Quantity:
+                            type: integer
+                            example: -1
+                          Recommended Rate:
+                            type: integer
+                            example: null
+                          Recommended Button:
+                            type: boolean
+                            example: false
+                          Custom Button:
+                            type: boolean
+                            example: false
+                          Weight:
+                            type: integer
+                            example: 0.23
+                          notify:
+                            type: boolean
+                            example: false
+                          _id:
+                            type: string
+                            example: 6377d8a09c57025e7b129fbd
+                          createdAt:
+                            type: string
+                            example: 2022-11-18T19:10:24.667Z
+                          updatedAt:
+                            type: string
+                            example: 2022-11-18T19:10:24.667Z
+  /product/variant/search/:id/name:
+    get:
+      tags:
+        - "Search Product Variant Name"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Get the Product Name"
+                  data:
+                    type: object
+                    example: []
+  /api/users/:userId/total-revenue:
+    get:
+      tags:
+        - "Total Revenue"
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+          required: true
+          description: The user id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Get the Total Revenue"
+                  data:
+                    type: object
+                    example: []
+  /api/users/all/stores:
+    get:
+      tags:
+        - "All Stores"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user: 
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 6377d8a09c57025e7b129fbd
+                      Owner_Name:
+                        type: string
+                        example: "Rahul Ranjan"
+                      owner_phone:
+                        type: string
+                        example: "1234567890"
+                      owner_email:
+                        type: string
+                        example: "hackrahul124@gmail.com"
+                      ownerDocumentFront:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                      ownerDocumentBack:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                      storeLegalName:
+                        type: string
+                        example: "One24-RahulStore"
+  /api/users/store/:storeId:
+    get:
+      tags:
+        - "Store Details"
+      parameters:
+        - in: path
+          name: storeId
+          schema:
+            type: string
+          required: true
+          description: The store id
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user: 
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 6377d8a09c57025e7b129fbd
+                      Owner_Name:
+                        type: string
+                        example: "Rahul Ranjan"
+                      owner_phone:
+                        type: string
+                        example: "1234567890"
+                      owner_email:
+                        type: string
+                        example: "hackrahul124@gmail.com"
+                      ownerDocumentFront:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentFront_hackrahul124%40gmail.com_1653718850986"
+                      ownerDocumentBack:
+                        type: string
+                        example: "https://one24trade.s3.ap-south-1.amazonaws.com/stores_images/ownerDocumentBack_hackrahul124%40gmail.com_1653718850986"
+                      storeLegalName:
+                        type: string
+                        example: "One24-RahulStore"
